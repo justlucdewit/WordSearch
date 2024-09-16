@@ -1,0 +1,43 @@
+:root {
+    --dark-board-colour: #e9e9e9;
+    --light-board-colour: #f9f9f9;
+  }
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.to-find-spot {
+    color: black;
+    background: rgb(247, 161, 161) !important;
+}
+
+#wordfind-board {
+    border-collapse: collapse;
+}
+
+#wordfind-board [id^="row-"] {
+    text-align: center;
+    /* border: 1px solid rgba(0, 0, 0, .1); */
+}
+
+/* Make the board checkered in colour */
+#wordfind-board tr:nth-child(odd) {
+    background-color: var(--dark-board-colour); /* Light gray for odd rows */
+}
+
+#wordfind-board tr:nth-child(even) {
+    background-color: var(--light-board-colour); /* White for even rows */
+}
+
+/* Apply styles to odd and even cells within each row */
+#wordfind-board tr:nth-child(odd) td:nth-child(odd),
+#wordfind-board tr:nth-child(even) td:nth-child(even) {
+    background-color: var(--dark-board-colour); /* Darker gray for odd cells in odd rows and even cells in even rows */
+}
+
+#wordfind-board tr:nth-child(odd) td:nth-child(even),
+#wordfind-board tr:nth-child(even) td:nth-child(odd) {
+    background-color: var(--light-board-colour); /* White for even cells in odd rows and odd cells in even rows */
+}
